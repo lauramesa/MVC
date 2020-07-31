@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MVC.Models.tbl_reseta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomplato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timtotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calorias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.utencilios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comentario_descrip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_ing_principal.ingrp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_list_ingredientes.ingredientes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_pasos.paso1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_tip_plato.tipo_plato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomplato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timtotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calorias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.utencilios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario_descrip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_ing_principal.ingrp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_list_ingredientes.ingredientes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_pasos.paso1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_tip_plato.tipo_plato)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idreseta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idreseta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idreseta })
+        </td>
+    </tr>
+}
+
+</table>

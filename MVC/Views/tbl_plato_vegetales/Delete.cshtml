@@ -1,0 +1,48 @@
+﻿@model MVC.Models.tbl_plato_vegetales
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_plato_vegetales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomplatov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomplatov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preciouv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preciouv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_reseta.nomplato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_reseta.nomplato)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model MVC.Models.tbl_plato_vegetales
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_plato_vegetales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomplatov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomplatov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preciouv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preciouv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_reseta.nomplato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_reseta.nomplato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

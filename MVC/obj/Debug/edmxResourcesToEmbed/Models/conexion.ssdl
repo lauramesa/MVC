@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="recetario_RendonMesaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_carta_restaurante">
+    <Key>
+      <PropertyRef Name="menu" />
+    </Key>
+    <Property Name="menu" Type="int" Nullable="false" />
+    <Property Name="p1base" Type="int" />
+    <Property Name="p2principal" Type="int" />
+    <Property Name="postre" Type="int" />
+    <Property Name="preciott" Type="float" />
+    <Property Name="comentarioteveto" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_inf_original">
+    <Key>
+      <PropertyRef Name="idoc" />
+    </Key>
+    <Property Name="idoc" Type="int" Nullable="false" />
+    <Property Name="serier" Type="int" />
+    <Property Name="fuente" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ubicacion" Type="varchar" MaxLength="130" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ing_principal">
+    <Key>
+      <PropertyRef Name="iding" />
+    </Key>
+    <Property Name="iding" Type="int" Nullable="false" />
+    <Property Name="ingrp" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_list_ingredientes">
+    <Key>
+      <PropertyRef Name="idlist" />
+    </Key>
+    <Property Name="idlist" Type="int" Nullable="false" />
+    <Property Name="ingredientes" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="cantidades" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_pasos">
+    <Key>
+      <PropertyRef Name="idpas" />
+    </Key>
+    <Property Name="idpas" Type="int" Nullable="false" />
+    <Property Name="paso1" Type="varchar" MaxLength="190" Nullable="false" />
+    <Property Name="timp1" Type="time" Precision="7" />
+    <Property Name="paso2" Type="varchar" MaxLength="190" Nullable="false" />
+    <Property Name="timp2" Type="time" Precision="7" />
+    <Property Name="paso3" Type="varchar" MaxLength="190" Nullable="false" />
+    <Property Name="timp3" Type="time" Precision="7" />
+    <Property Name="paso4" Type="varchar" MaxLength="190" Nullable="false" />
+    <Property Name="timp4" Type="time" Precision="7" />
+    <Property Name="paso5" Type="varchar" MaxLength="190" />
+    <Property Name="timp5" Type="time" Precision="7" />
+    <Property Name="paso6" Type="varchar" MaxLength="190" />
+    <Property Name="timp6" Type="time" Precision="7" />
+    <Property Name="paso7" Type="varchar" MaxLength="190" />
+    <Property Name="timp7" Type="time" Precision="7" />
+    <Property Name="comentario" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbl_plato_carnes">
+    <Key>
+      <PropertyRef Name="idc" />
+    </Key>
+    <Property Name="idc" Type="int" Nullable="false" />
+    <Property Name="idresetac" Type="int" />
+    <Property Name="nomplatoc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="preciouc" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_plato_postre">
+    <Key>
+      <PropertyRef Name="idp" />
+    </Key>
+    <Property Name="idp" Type="int" Nullable="false" />
+    <Property Name="idresetap" Type="int" />
+    <Property Name="nomplatop" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precioup" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_plato_vegetales">
+    <Key>
+      <PropertyRef Name="idv" />
+    </Key>
+    <Property Name="idv" Type="int" Nullable="false" />
+    <Property Name="idresetav" Type="int" />
+    <Property Name="nomplatov" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="preciouv" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_reseta">
+    <Key>
+      <PropertyRef Name="idreseta" />
+    </Key>
+    <Property Name="idreseta" Type="int" Nullable="false" />
+    <Property Name="tpp" Type="int" />
+    <Property Name="nomplato" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="idpasos" Type="int" />
+    <Property Name="timtotal" Type="time" Precision="7" />
+    <Property Name="calorias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="listing" Type="int" />
+    <Property Name="ingpp" Type="int" />
+    <Property Name="utencilios" Type="varchar" MaxLength="140" Nullable="false" />
+    <Property Name="comentario_descrip" Type="varchar" MaxLength="170" />
+  </EntityType>
+  <EntityType Name="tbl_tip_plato">
+    <Key>
+      <PropertyRef Name="idtplato" />
+    </Key>
+    <Property Name="idtplato" Type="int" Nullable="false" />
+    <Property Name="tipo_plato" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="kl_m1">
+    <End Role="tbl_plato_vegetales" Type="Self.tbl_plato_vegetales" Multiplicity="0..1" />
+    <End Role="tbl_carta_restaurante" Type="Self.tbl_carta_restaurante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_plato_vegetales">
+        <PropertyRef Name="idv" />
+      </Principal>
+      <Dependent Role="tbl_carta_restaurante">
+        <PropertyRef Name="p1base" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_m2">
+    <End Role="tbl_plato_carnes" Type="Self.tbl_plato_carnes" Multiplicity="0..1" />
+    <End Role="tbl_carta_restaurante" Type="Self.tbl_carta_restaurante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_plato_carnes">
+        <PropertyRef Name="idc" />
+      </Principal>
+      <Dependent Role="tbl_carta_restaurante">
+        <PropertyRef Name="p2principal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_m3">
+    <End Role="tbl_plato_postre" Type="Self.tbl_plato_postre" Multiplicity="0..1" />
+    <End Role="tbl_carta_restaurante" Type="Self.tbl_carta_restaurante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_plato_postre">
+        <PropertyRef Name="idp" />
+      </Principal>
+      <Dependent Role="tbl_carta_restaurante">
+        <PropertyRef Name="postre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_pp">
+    <End Role="tbl_ing_principal" Type="Self.tbl_ing_principal" Multiplicity="0..1" />
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ing_principal">
+        <PropertyRef Name="iding" />
+      </Principal>
+      <Dependent Role="tbl_reseta">
+        <PropertyRef Name="ingpp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_r01">
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="0..1" />
+    <End Role="tbl_plato_carnes" Type="Self.tbl_plato_carnes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_reseta">
+        <PropertyRef Name="idreseta" />
+      </Principal>
+      <Dependent Role="tbl_plato_carnes">
+        <PropertyRef Name="idresetac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_r02">
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="0..1" />
+    <End Role="tbl_plato_vegetales" Type="Self.tbl_plato_vegetales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_reseta">
+        <PropertyRef Name="idreseta" />
+      </Principal>
+      <Dependent Role="tbl_plato_vegetales">
+        <PropertyRef Name="idresetav" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_r03">
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="0..1" />
+    <End Role="tbl_plato_postre" Type="Self.tbl_plato_postre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_reseta">
+        <PropertyRef Name="idreseta" />
+      </Principal>
+      <Dependent Role="tbl_plato_postre">
+        <PropertyRef Name="idresetap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_rsa">
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="0..1" />
+    <End Role="tbl_inf_original" Type="Self.tbl_inf_original" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_reseta">
+        <PropertyRef Name="idreseta" />
+      </Principal>
+      <Dependent Role="tbl_inf_original">
+        <PropertyRef Name="serier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kl_tpp">
+    <End Role="tbl_tip_plato" Type="Self.tbl_tip_plato" Multiplicity="0..1" />
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tip_plato">
+        <PropertyRef Name="idtplato" />
+      </Principal>
+      <Dependent Role="tbl_reseta">
+        <PropertyRef Name="tpp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="kllst">
+    <End Role="tbl_list_ingredientes" Type="Self.tbl_list_ingredientes" Multiplicity="0..1" />
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_list_ingredientes">
+        <PropertyRef Name="idlist" />
+      </Principal>
+      <Dependent Role="tbl_reseta">
+        <PropertyRef Name="listing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="klpr">
+    <End Role="tbl_pasos" Type="Self.tbl_pasos" Multiplicity="0..1" />
+    <End Role="tbl_reseta" Type="Self.tbl_reseta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_pasos">
+        <PropertyRef Name="idpas" />
+      </Principal>
+      <Dependent Role="tbl_reseta">
+        <PropertyRef Name="idpasos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="recetario_RendonMesaModelStoreContainer">
+    <EntitySet Name="tbl_carta_restaurante" EntityType="Self.tbl_carta_restaurante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_inf_original" EntityType="Self.tbl_inf_original" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ing_principal" EntityType="Self.tbl_ing_principal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_list_ingredientes" EntityType="Self.tbl_list_ingredientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_pasos" EntityType="Self.tbl_pasos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_plato_carnes" EntityType="Self.tbl_plato_carnes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_plato_postre" EntityType="Self.tbl_plato_postre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_plato_vegetales" EntityType="Self.tbl_plato_vegetales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_reseta" EntityType="Self.tbl_reseta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_tip_plato" EntityType="Self.tbl_tip_plato" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="kl_m1" Association="Self.kl_m1">
+      <End Role="tbl_plato_vegetales" EntitySet="tbl_plato_vegetales" />
+      <End Role="tbl_carta_restaurante" EntitySet="tbl_carta_restaurante" />
+    </AssociationSet>
+    <AssociationSet Name="kl_m2" Association="Self.kl_m2">
+      <End Role="tbl_plato_carnes" EntitySet="tbl_plato_carnes" />
+      <End Role="tbl_carta_restaurante" EntitySet="tbl_carta_restaurante" />
+    </AssociationSet>
+    <AssociationSet Name="kl_m3" Association="Self.kl_m3">
+      <End Role="tbl_plato_postre" EntitySet="tbl_plato_postre" />
+      <End Role="tbl_carta_restaurante" EntitySet="tbl_carta_restaurante" />
+    </AssociationSet>
+    <AssociationSet Name="kl_pp" Association="Self.kl_pp">
+      <End Role="tbl_ing_principal" EntitySet="tbl_ing_principal" />
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+    </AssociationSet>
+    <AssociationSet Name="kl_r01" Association="Self.kl_r01">
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+      <End Role="tbl_plato_carnes" EntitySet="tbl_plato_carnes" />
+    </AssociationSet>
+    <AssociationSet Name="kl_r02" Association="Self.kl_r02">
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+      <End Role="tbl_plato_vegetales" EntitySet="tbl_plato_vegetales" />
+    </AssociationSet>
+    <AssociationSet Name="kl_r03" Association="Self.kl_r03">
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+      <End Role="tbl_plato_postre" EntitySet="tbl_plato_postre" />
+    </AssociationSet>
+    <AssociationSet Name="kl_rsa" Association="Self.kl_rsa">
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+      <End Role="tbl_inf_original" EntitySet="tbl_inf_original" />
+    </AssociationSet>
+    <AssociationSet Name="kl_tpp" Association="Self.kl_tpp">
+      <End Role="tbl_tip_plato" EntitySet="tbl_tip_plato" />
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+    </AssociationSet>
+    <AssociationSet Name="kllst" Association="Self.kllst">
+      <End Role="tbl_list_ingredientes" EntitySet="tbl_list_ingredientes" />
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+    </AssociationSet>
+    <AssociationSet Name="klpr" Association="Self.klpr">
+      <End Role="tbl_pasos" EntitySet="tbl_pasos" />
+      <End Role="tbl_reseta" EntitySet="tbl_reseta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

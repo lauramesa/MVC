@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MVC.Models.tbl_carta_restaurante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.preciott)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comentarioteveto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_plato_vegetales.nomplatov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_plato_carnes.nomplatoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_plato_postre.nomplatop)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.preciott)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentarioteveto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_plato_vegetales.nomplatov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_plato_carnes.nomplatoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_plato_postre.nomplatop)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.menu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.menu }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.menu })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="recetario_RendonMesaModelStoreContainer" CdmEntityContainer="recetario_RendonMesaEntities">
+    <EntitySetMapping Name="tbl_carta_restaurante">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_carta_restaurante">
+        <MappingFragment StoreEntitySet="tbl_carta_restaurante">
+          <ScalarProperty Name="menu" ColumnName="menu" />
+          <ScalarProperty Name="p1base" ColumnName="p1base" />
+          <ScalarProperty Name="p2principal" ColumnName="p2principal" />
+          <ScalarProperty Name="postre" ColumnName="postre" />
+          <ScalarProperty Name="preciott" ColumnName="preciott" />
+          <ScalarProperty Name="comentarioteveto" ColumnName="comentarioteveto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_inf_original">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_inf_original">
+        <MappingFragment StoreEntitySet="tbl_inf_original">
+          <ScalarProperty Name="idoc" ColumnName="idoc" />
+          <ScalarProperty Name="serier" ColumnName="serier" />
+          <ScalarProperty Name="fuente" ColumnName="fuente" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ing_principal">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_ing_principal">
+        <MappingFragment StoreEntitySet="tbl_ing_principal">
+          <ScalarProperty Name="iding" ColumnName="iding" />
+          <ScalarProperty Name="ingrp" ColumnName="ingrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_list_ingredientes">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_list_ingredientes">
+        <MappingFragment StoreEntitySet="tbl_list_ingredientes">
+          <ScalarProperty Name="idlist" ColumnName="idlist" />
+          <ScalarProperty Name="ingredientes" ColumnName="ingredientes" />
+          <ScalarProperty Name="cantidades" ColumnName="cantidades" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pasos">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_pasos">
+        <MappingFragment StoreEntitySet="tbl_pasos">
+          <ScalarProperty Name="idpas" ColumnName="idpas" />
+          <ScalarProperty Name="paso1" ColumnName="paso1" />
+          <ScalarProperty Name="timp1" ColumnName="timp1" />
+          <ScalarProperty Name="paso2" ColumnName="paso2" />
+          <ScalarProperty Name="timp2" ColumnName="timp2" />
+          <ScalarProperty Name="paso3" ColumnName="paso3" />
+          <ScalarProperty Name="timp3" ColumnName="timp3" />
+          <ScalarProperty Name="paso4" ColumnName="paso4" />
+          <ScalarProperty Name="timp4" ColumnName="timp4" />
+          <ScalarProperty Name="paso5" ColumnName="paso5" />
+          <ScalarProperty Name="timp5" ColumnName="timp5" />
+          <ScalarProperty Name="paso6" ColumnName="paso6" />
+          <ScalarProperty Name="timp6" ColumnName="timp6" />
+          <ScalarProperty Name="paso7" ColumnName="paso7" />
+          <ScalarProperty Name="timp7" ColumnName="timp7" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_plato_carnes">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_plato_carnes">
+        <MappingFragment StoreEntitySet="tbl_plato_carnes">
+          <ScalarProperty Name="idc" ColumnName="idc" />
+          <ScalarProperty Name="idresetac" ColumnName="idresetac" />
+          <ScalarProperty Name="nomplatoc" ColumnName="nomplatoc" />
+          <ScalarProperty Name="preciouc" ColumnName="preciouc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_plato_postre">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_plato_postre">
+        <MappingFragment StoreEntitySet="tbl_plato_postre">
+          <ScalarProperty Name="idp" ColumnName="idp" />
+          <ScalarProperty Name="idresetap" ColumnName="idresetap" />
+          <ScalarProperty Name="nomplatop" ColumnName="nomplatop" />
+          <ScalarProperty Name="precioup" ColumnName="precioup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_plato_vegetales">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_plato_vegetales">
+        <MappingFragment StoreEntitySet="tbl_plato_vegetales">
+          <ScalarProperty Name="idv" ColumnName="idv" />
+          <ScalarProperty Name="idresetav" ColumnName="idresetav" />
+          <ScalarProperty Name="nomplatov" ColumnName="nomplatov" />
+          <ScalarProperty Name="preciouv" ColumnName="preciouv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_reseta">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_reseta">
+        <MappingFragment StoreEntitySet="tbl_reseta">
+          <ScalarProperty Name="idreseta" ColumnName="idreseta" />
+          <ScalarProperty Name="tpp" ColumnName="tpp" />
+          <ScalarProperty Name="nomplato" ColumnName="nomplato" />
+          <ScalarProperty Name="idpasos" ColumnName="idpasos" />
+          <ScalarProperty Name="timtotal" ColumnName="timtotal" />
+          <ScalarProperty Name="calorias" ColumnName="calorias" />
+          <ScalarProperty Name="listing" ColumnName="listing" />
+          <ScalarProperty Name="ingpp" ColumnName="ingpp" />
+          <ScalarProperty Name="utencilios" ColumnName="utencilios" />
+          <ScalarProperty Name="comentario_descrip" ColumnName="comentario_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tip_plato">
+      <EntityTypeMapping TypeName="recetario_RendonMesaModel.tbl_tip_plato">
+        <MappingFragment StoreEntitySet="tbl_tip_plato">
+          <ScalarProperty Name="idtplato" ColumnName="idtplato" />
+          <ScalarProperty Name="tipo_plato" ColumnName="tipo_plato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

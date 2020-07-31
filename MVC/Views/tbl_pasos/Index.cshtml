@@ -1,0 +1,117 @@
+﻿@model IEnumerable<MVC.Models.tbl_pasos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.paso1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paso2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paso3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paso4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paso5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paso6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paso7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timp7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comentario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paso7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timp7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idpas }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idpas }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idpas })
+        </td>
+    </tr>
+}
+
+</table>

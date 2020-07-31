@@ -1,0 +1,58 @@
+﻿@model MVC.Models.tbl_carta_restaurante
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_carta_restaurante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.preciott)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preciott)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentarioteveto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentarioteveto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_plato_vegetales.nomplatov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_plato_vegetales.nomplatov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_plato_carnes.nomplatoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_plato_carnes.nomplatoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_plato_postre.nomplatop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_plato_postre.nomplatop)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.menu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

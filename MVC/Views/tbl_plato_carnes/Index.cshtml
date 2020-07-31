@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC.Models.tbl_plato_carnes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomplatoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciouc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_reseta.nomplato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomplatoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preciouc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_reseta.nomplato)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idc }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idc }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idc })
+        </td>
+    </tr>
+}
+
+</table>

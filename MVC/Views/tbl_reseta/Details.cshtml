@@ -1,0 +1,90 @@
+﻿@model MVC.Models.tbl_reseta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_reseta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomplato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomplato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timtotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timtotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.calorias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.calorias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.utencilios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.utencilios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario_descrip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario_descrip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_ing_principal.ingrp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_ing_principal.ingrp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_list_ingredientes.ingredientes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_list_ingredientes.ingredientes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_pasos.paso1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_pasos.paso1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_tip_plato.tipo_plato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_tip_plato.tipo_plato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idreseta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model MVC.Models.tbl_inf_original
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_inf_original</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fuente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fuente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_reseta.nomplato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_reseta.nomplato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idoc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

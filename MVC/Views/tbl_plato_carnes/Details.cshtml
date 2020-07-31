@@ -1,0 +1,42 @@
+﻿@model MVC.Models.tbl_plato_carnes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_plato_carnes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomplatoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomplatoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preciouc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preciouc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_reseta.nomplato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_reseta.nomplato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
